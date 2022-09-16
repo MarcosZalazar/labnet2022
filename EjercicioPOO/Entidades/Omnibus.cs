@@ -8,9 +8,24 @@ namespace Entidades
 {
     public class Omnibus : TransportePublico
     {
+        private static int capacidadMaximaOmnibus;
+
+        static Omnibus()
+        {
+            Omnibus.capacidadMaximaOmnibus = 50;
+        }
+
         public Omnibus(int cantidadPasajeros) : base(cantidadPasajeros)
         {
 
+        }
+
+        public static int CapacidadMaximaOmnibus
+        {
+            get
+            {
+                return Omnibus.capacidadMaximaOmnibus;
+            }
         }
 
         public override void Avanzar()
@@ -18,9 +33,14 @@ namespace Entidades
             throw new NotImplementedException();
         }
 
-        public override void Deternerse()
+        public override void Detenerse()
         {
             throw new NotImplementedException();
+        }
+
+        public override string MostrarInformacion()
+        {
+            return base.MostrarInformacion()+ " pasajeros en el Omnibus";
         }
 
     }

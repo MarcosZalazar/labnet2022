@@ -8,7 +8,7 @@ namespace Entidades
 {
     public abstract class TransportePublico
     {
-        private int pasajeros;
+        private int pasajeros; 
 
         public TransportePublico(int pasajeros)
         {
@@ -23,12 +23,17 @@ namespace Entidades
             }
             set
             {
-                this.pasajeros = value;
+                this.pasajeros=value;
             }
         }
 
         public abstract void Avanzar();
 
-        public abstract void Deternerse();
+        public abstract void Detenerse();
+
+        public virtual string MostrarInformacion()
+        {
+            return $"{this.Pasajeros}";
+        }
     }
 }
