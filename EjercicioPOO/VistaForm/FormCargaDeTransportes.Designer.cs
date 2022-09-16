@@ -288,12 +288,13 @@
             // 
             // btnMostrarInforme
             // 
+            this.btnMostrarInforme.BackColor = System.Drawing.Color.Silver;
             this.btnMostrarInforme.Location = new System.Drawing.Point(308, 31);
             this.btnMostrarInforme.Name = "btnMostrarInforme";
             this.btnMostrarInforme.Size = new System.Drawing.Size(96, 53);
             this.btnMostrarInforme.TabIndex = 2;
             this.btnMostrarInforme.Text = "Mostrar informe";
-            this.btnMostrarInforme.UseVisualStyleBackColor = true;
+            this.btnMostrarInforme.UseVisualStyleBackColor = false;
             this.btnMostrarInforme.Click += new System.EventHandler(this.btnMostrarInforme_Click);
             // 
             // lblCantPasajerosMax
@@ -309,6 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(416, 433);
             this.Controls.Add(this.btnMostrarInforme);
             this.Controls.Add(this.grpListaDeTaxis);
