@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DecimalExtension.cs" />
     <Compile Include="Logic.cs" />
     <Compile Include="ParametroVacioException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

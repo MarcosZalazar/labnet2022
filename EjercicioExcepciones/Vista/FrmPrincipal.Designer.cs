@@ -123,6 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(565, 219);
             this.Controls.Add(this.rtbResultado);
             this.Controls.Add(this.btnEjercicioCuatro);
@@ -133,7 +134,11 @@
             this.Controls.Add(this.txtDividendo);
             this.Controls.Add(this.lblDivisor);
             this.Controls.Add(this.lblDividendo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario Principal";
             this.ResumeLayout(false);
             this.PerformLayout();

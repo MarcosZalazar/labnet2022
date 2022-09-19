@@ -49,7 +49,9 @@ namespace Vista
         {
             try
             {
-                this.rtbResultado.Text = Logic.Dividir(decimal.Parse(this.txtDividendo.Text), decimal.Parse(this.txtDivisor.Text)).ToString();
+                decimal resultado = Logic.Dividir(decimal.Parse(this.txtDividendo.Text), decimal.Parse(this.txtDivisor.Text));
+                this.rtbResultado.Text = resultado.ToString() + Environment.NewLine;
+                this.rtbResultado.Text += resultado.DeterminarPar();
             }
             catch (DivideByZeroException dex)
             {
@@ -57,7 +59,7 @@ namespace Vista
             }
             catch (FormatException)
             {
-                MessageBox.Show("Seguro Ingreso una letra o no ingreso nada!");
+                MessageBox.Show("Seguro ingresó una letra o no ingresó nada!");
             }
             catch (Exception ex)
             {
