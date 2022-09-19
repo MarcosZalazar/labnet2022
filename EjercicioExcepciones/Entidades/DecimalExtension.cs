@@ -10,7 +10,7 @@ namespace Entidades
     {
         public static string DeterminarPar(this decimal numero)
         {
-            string mensaje="El resultado no es un número par";
+            string mensaje="El resultado es un número impar";
 
             if ((numero%2)==0)
             {
