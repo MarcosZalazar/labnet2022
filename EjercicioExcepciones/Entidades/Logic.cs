@@ -8,9 +8,9 @@ namespace Entidades
 {
     public static class Logic
     {
-        public static decimal Dividir(decimal divisor, decimal dividendo)
+        public static decimal Dividir(decimal dividendo, decimal divisor)
         {
-            return divisor / dividendo;
+            return dividendo / divisor;
         }
 
         public static void EmisorExcepcion()
