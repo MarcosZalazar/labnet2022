@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace TP4.UI
 {
-    public partial class Form1 : Form
+    public partial class FrmTransportista : Form
     {
-        public Form1()
+        public FrmTransportista()
         {
             InitializeComponent();
+        }
+
+        private void btnShippersAcept_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnShippersCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

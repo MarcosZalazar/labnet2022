@@ -51,11 +51,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseLogic.cs" />
+    <Compile Include="ILogic.cs" />
+    <Compile Include="ShippersLogic.cs" />
+    <Compile Include="SuppliersLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TP4.Data\TP4.Data.csproj">
+      <Project>{4FAF0E41-0B03-4DC7-8D91-67AA875740BD}</Project>
+      <Name>TP4.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TP4.Entities\TP4.Entities.csproj">
+      <Project>{2ae99759-5f04-4dd2-be39-b4e257535d1b}</Project>
+      <Name>TP4.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
