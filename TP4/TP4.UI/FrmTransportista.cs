@@ -12,7 +12,7 @@ using TP4.Utils;
 
 namespace TP4.UI
 {
-    public partial class FrmTransportista : Form
+    public partial class FrmTransportista : Form, IValidaciones
     {
         private Shippers shipper;
 

@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TP4.Data;
 using TP4.Entities;
 
 namespace TP4.Logic
 {
     public class ShippersLogic : BaseLogic<Shippers>
     {
+        public ShippersLogic( )
+        {
+
+        }
+
+        public ShippersLogic(NorthwindContext contextMoq) 
+        {
+            context = contextMoq;
+        }
+
         public override Shippers GetOne(int id)
         {
             return context.Shippers.Find(id);

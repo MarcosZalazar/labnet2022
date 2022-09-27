@@ -12,7 +12,7 @@ using TP4.Utils;
 
 namespace TP4.UI
 {
-    public partial class FrmCategories : Form
+    public partial class FrmCategories : Form, IValidaciones
     {
         private Categories category;
 

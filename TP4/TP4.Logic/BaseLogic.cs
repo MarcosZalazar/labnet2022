@@ -9,7 +9,7 @@ namespace TP4.Logic
 {
     public abstract class BaseLogic<T> : ILogic<T>
     {
-        protected readonly NorthwindContext context;
+        protected NorthwindContext context;
 
         public BaseLogic()
         {
