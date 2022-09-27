@@ -11,7 +11,7 @@ using TP4.Logic;
 namespace T4.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class ShippersTests
     {
         [TestMethod]
         public void GetAll_AlInstanciarObjetos_DevuelveObjetosDelTipoListaDeShippers()
