@@ -12,55 +12,55 @@ using TP4.Utils;
 
 namespace TP4.UI
 {
-    public partial class FrmTransportista : Form
+    public partial class FrmCategories : Form
     {
-        private Shippers shipper;
+        private Categories category;
 
-        public FrmTransportista(string operation, string operationButton, Shippers shipper)
+        public FrmCategories(string operation, string operationButton, Categories category)
         {
             InitializeComponent();
             this.Text = operation;
-            this.btnShippersAcept.Text = operationButton;
-            this.shipper = shipper;
-            this.txtShippersId.Enabled = false;
+            this.btnCategoryAccept.Text = operationButton;
+            this.category = category;
+            this.txtIdCategory.Enabled = false;
         }
 
-        public Shippers LoadedShipper
+        public Categories LoadedCategory
         {
             get
             {
-                return this.shipper;
+                return this.category;
             }
         }
 
-        private void FrmTransportista_Load(object sender, EventArgs e)
+        private void FrmCategories_Load(object sender, EventArgs e)
         {
-            if (!(shipper is null))
+            if (!(category is null))
             {
-                this.txtShippersId.Text = shipper.ShipperID.ToString();
-                this.txtShippersCompanyName.Text = shipper.CompanyName;
-                this.txtShippersPhone.Text = shipper.Phone;
+                this.txtIdCategory.Text = category.CategoryID.ToString();
+                this.txtCategoryName.Text = category.CategoryName;
+                this.txtCategoryDescription.Text = category.Description;
             }
         }
 
-        private void btnShippersAcept_Click(object sender, EventArgs e)
+        private void btnCategoryAccept_Click(object sender, EventArgs e)
         {
             try
             {
                 if (this.AllFieldsChecked())
                 {
-                    if (this.shipper is null)
+                    if (this.category is null)
                     {
-                        this.shipper = new Shippers
+                        this.category = new Categories
                         {
-                            CompanyName = this.txtShippersCompanyName.Text,
-                            Phone = this.txtShippersPhone.Text
+                            CategoryName = this.txtCategoryName.Text,
+                            Description = this.txtCategoryDescription.Text
                         };
                     }
                     else
                     {
-                        this.shipper.CompanyName = this.txtShippersCompanyName.Text;
-                        this.shipper.Phone = this.txtShippersPhone.Text;
+                        this.category.CategoryName = this.txtCategoryName.Text;
+                        this.category.Description = this.txtCategoryDescription.Text;
                     }
 
                     this.DialogResult = DialogResult.OK;
@@ -76,15 +76,14 @@ namespace TP4.UI
             }
         }
 
-        private void btnShippersCancel_Click(object sender, EventArgs e)
+        private void btnCategoryCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
         private bool AllFieldsChecked()
         {
-            if (FieldIsNotEmpty(this.txtShippersCompanyName.Text))
+            if (FieldIsNotEmpty(this.txtCategoryName.Text))
             {
                 return true;
             }
@@ -106,7 +105,7 @@ namespace TP4.UI
             }
         }
 
-        private void txtShippersCompanyName_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtCategoryName_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 33 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
             {
@@ -115,11 +114,11 @@ namespace TP4.UI
             }
         }
 
-        private void txtShippersPhone_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtCategoryDescription_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 33 && e.KeyChar <= 39) || (e.KeyChar >= 42 && e.KeyChar <= 44) || (e.KeyChar >= 46 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            if ((e.KeyChar >= 33 && e.KeyChar <= 43) || (e.KeyChar == 45) || (e.KeyChar >= 47 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Caracter inválido para registrar un número de teléfono", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Solo se pueden ingresar letras", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
             }
         }

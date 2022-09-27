@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblSuplierSubtitle = new System.Windows.Forms.Label();
+            this.lblCategorySubtitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lstSuppliers = new System.Windows.Forms.ListBox();
-            this.btnAddSupplier = new System.Windows.Forms.Button();
-            this.btnUpdateSupplier = new System.Windows.Forms.Button();
-            this.btnDeleteSupplier = new System.Windows.Forms.Button();
-            this.btnInfoSupplier = new System.Windows.Forms.Button();
-            this.btnInfoAllSuppliers = new System.Windows.Forms.Button();
+            this.lstCategories = new System.Windows.Forms.ListBox();
+            this.btnAddCategory = new System.Windows.Forms.Button();
+            this.btnUpdateCategory = new System.Windows.Forms.Button();
+            this.btnDeleteCategory = new System.Windows.Forms.Button();
+            this.btnInfoCategory = new System.Windows.Forms.Button();
+            this.btnInfoAllCategories = new System.Windows.Forms.Button();
             this.lblShipper = new System.Windows.Forms.Label();
             this.lstShippers = new System.Windows.Forms.ListBox();
             this.btnAddShipper = new System.Windows.Forms.Button();
@@ -45,14 +45,14 @@
             this.btnInfoAllShipper = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblSuplierSubtitle
+            // lblCategorySubtitle
             // 
-            this.lblSuplierSubtitle.AutoSize = true;
-            this.lblSuplierSubtitle.Location = new System.Drawing.Point(22, 45);
-            this.lblSuplierSubtitle.Name = "lblSuplierSubtitle";
-            this.lblSuplierSubtitle.Size = new System.Drawing.Size(67, 13);
-            this.lblSuplierSubtitle.TabIndex = 0;
-            this.lblSuplierSubtitle.Text = "Proveedores";
+            this.lblCategorySubtitle.AutoSize = true;
+            this.lblCategorySubtitle.Location = new System.Drawing.Point(22, 45);
+            this.lblCategorySubtitle.Name = "lblCategorySubtitle";
+            this.lblCategorySubtitle.Size = new System.Drawing.Size(57, 13);
+            this.lblCategorySubtitle.TabIndex = 0;
+            this.lblCategorySubtitle.Text = "Categorias";
             // 
             // lblTitle
             // 
@@ -63,72 +63,72 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Consultas de informacion de la base de datos Northwind";
             // 
-            // lstSuppliers
+            // lstCategories
             // 
-            this.lstSuppliers.FormattingEnabled = true;
-            this.lstSuppliers.Location = new System.Drawing.Point(25, 75);
-            this.lstSuppliers.Name = "lstSuppliers";
-            this.lstSuppliers.Size = new System.Drawing.Size(731, 108);
-            this.lstSuppliers.TabIndex = 2;
+            this.lstCategories.FormattingEnabled = true;
+            this.lstCategories.Location = new System.Drawing.Point(25, 75);
+            this.lstCategories.Name = "lstCategories";
+            this.lstCategories.Size = new System.Drawing.Size(731, 108);
+            this.lstCategories.TabIndex = 2;
             // 
-            // btnAddSupplier
+            // btnAddCategory
             // 
-            this.btnAddSupplier.Location = new System.Drawing.Point(25, 204);
-            this.btnAddSupplier.Name = "btnAddSupplier";
-            this.btnAddSupplier.Size = new System.Drawing.Size(99, 48);
-            this.btnAddSupplier.TabIndex = 3;
-            this.btnAddSupplier.Text = "Agregar";
-            this.btnAddSupplier.UseVisualStyleBackColor = true;
-            this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
+            this.btnAddCategory.Location = new System.Drawing.Point(25, 204);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.Size = new System.Drawing.Size(99, 48);
+            this.btnAddCategory.TabIndex = 3;
+            this.btnAddCategory.Text = "Agregar";
+            this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
-            // btnUpdateSupplier
+            // btnUpdateCategory
             // 
-            this.btnUpdateSupplier.Location = new System.Drawing.Point(182, 204);
-            this.btnUpdateSupplier.Name = "btnUpdateSupplier";
-            this.btnUpdateSupplier.Size = new System.Drawing.Size(99, 48);
-            this.btnUpdateSupplier.TabIndex = 4;
-            this.btnUpdateSupplier.Text = "Modificar";
-            this.btnUpdateSupplier.UseVisualStyleBackColor = true;
-            this.btnUpdateSupplier.Click += new System.EventHandler(this.btnUpdateSupplier_Click);
+            this.btnUpdateCategory.Location = new System.Drawing.Point(182, 204);
+            this.btnUpdateCategory.Name = "btnUpdateCategory";
+            this.btnUpdateCategory.Size = new System.Drawing.Size(99, 48);
+            this.btnUpdateCategory.TabIndex = 4;
+            this.btnUpdateCategory.Text = "Modificar";
+            this.btnUpdateCategory.UseVisualStyleBackColor = true;
+            this.btnUpdateCategory.Click += new System.EventHandler(this.btnUpdateCategory_Click);
             // 
-            // btnDeleteSupplier
+            // btnDeleteCategory
             // 
-            this.btnDeleteSupplier.Location = new System.Drawing.Point(340, 204);
-            this.btnDeleteSupplier.Name = "btnDeleteSupplier";
-            this.btnDeleteSupplier.Size = new System.Drawing.Size(99, 48);
-            this.btnDeleteSupplier.TabIndex = 5;
-            this.btnDeleteSupplier.Text = "Eliminar";
-            this.btnDeleteSupplier.UseVisualStyleBackColor = true;
-            this.btnDeleteSupplier.Click += new System.EventHandler(this.btnDeleteSupplier_Click);
+            this.btnDeleteCategory.Location = new System.Drawing.Point(340, 204);
+            this.btnDeleteCategory.Name = "btnDeleteCategory";
+            this.btnDeleteCategory.Size = new System.Drawing.Size(99, 48);
+            this.btnDeleteCategory.TabIndex = 5;
+            this.btnDeleteCategory.Text = "Eliminar";
+            this.btnDeleteCategory.UseVisualStyleBackColor = true;
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
             // 
-            // btnInfoSupplier
+            // btnInfoCategory
             // 
-            this.btnInfoSupplier.Location = new System.Drawing.Point(504, 204);
-            this.btnInfoSupplier.Name = "btnInfoSupplier";
-            this.btnInfoSupplier.Size = new System.Drawing.Size(99, 48);
-            this.btnInfoSupplier.TabIndex = 6;
-            this.btnInfoSupplier.Text = "Informacion del proveedor";
-            this.btnInfoSupplier.UseVisualStyleBackColor = true;
-            this.btnInfoSupplier.Click += new System.EventHandler(this.btnInfoSupplier_Click);
+            this.btnInfoCategory.Location = new System.Drawing.Point(504, 204);
+            this.btnInfoCategory.Name = "btnInfoCategory";
+            this.btnInfoCategory.Size = new System.Drawing.Size(99, 48);
+            this.btnInfoCategory.TabIndex = 6;
+            this.btnInfoCategory.Text = "Informacion de la categoría";
+            this.btnInfoCategory.UseVisualStyleBackColor = true;
+            this.btnInfoCategory.Click += new System.EventHandler(this.btnInfoCategory_Click);
             // 
-            // btnInfoAllSuppliers
+            // btnInfoAllCategories
             // 
-            this.btnInfoAllSuppliers.Location = new System.Drawing.Point(657, 204);
-            this.btnInfoAllSuppliers.Name = "btnInfoAllSuppliers";
-            this.btnInfoAllSuppliers.Size = new System.Drawing.Size(99, 48);
-            this.btnInfoAllSuppliers.TabIndex = 7;
-            this.btnInfoAllSuppliers.Text = "Informacion de todos los proveedores";
-            this.btnInfoAllSuppliers.UseVisualStyleBackColor = true;
-            this.btnInfoAllSuppliers.Click += new System.EventHandler(this.btnInfoAllSuppliers_Click);
+            this.btnInfoAllCategories.Location = new System.Drawing.Point(657, 204);
+            this.btnInfoAllCategories.Name = "btnInfoAllCategories";
+            this.btnInfoAllCategories.Size = new System.Drawing.Size(99, 48);
+            this.btnInfoAllCategories.TabIndex = 7;
+            this.btnInfoAllCategories.Text = "Informacion de todas las categorías";
+            this.btnInfoAllCategories.UseVisualStyleBackColor = true;
+            this.btnInfoAllCategories.Click += new System.EventHandler(this.btnInfoAllCategories_Click);
             // 
             // lblShipper
             // 
             this.lblShipper.AutoSize = true;
             this.lblShipper.Location = new System.Drawing.Point(25, 276);
             this.lblShipper.Name = "lblShipper";
-            this.lblShipper.Size = new System.Drawing.Size(68, 13);
+            this.lblShipper.Size = new System.Drawing.Size(73, 13);
             this.lblShipper.TabIndex = 8;
-            this.lblShipper.Text = "Transportista";
+            this.lblShipper.Text = "Transportistas";
             // 
             // lstShippers
             // 
@@ -192,6 +192,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(803, 512);
             this.Controls.Add(this.btnInfoAllShipper);
             this.Controls.Add(this.btnInfoShipper);
@@ -200,16 +201,21 @@
             this.Controls.Add(this.btnAddShipper);
             this.Controls.Add(this.lstShippers);
             this.Controls.Add(this.lblShipper);
-            this.Controls.Add(this.btnInfoAllSuppliers);
-            this.Controls.Add(this.btnInfoSupplier);
-            this.Controls.Add(this.btnDeleteSupplier);
-            this.Controls.Add(this.btnUpdateSupplier);
-            this.Controls.Add(this.btnAddSupplier);
-            this.Controls.Add(this.lstSuppliers);
+            this.Controls.Add(this.btnInfoAllCategories);
+            this.Controls.Add(this.btnInfoCategory);
+            this.Controls.Add(this.btnDeleteCategory);
+            this.Controls.Add(this.btnUpdateCategory);
+            this.Controls.Add(this.btnAddCategory);
+            this.Controls.Add(this.lstCategories);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblSuplierSubtitle);
+            this.Controls.Add(this.lblCategorySubtitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario principal";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,14 +223,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblSuplierSubtitle;
+        private System.Windows.Forms.Label lblCategorySubtitle;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.ListBox lstSuppliers;
-        private System.Windows.Forms.Button btnAddSupplier;
-        private System.Windows.Forms.Button btnUpdateSupplier;
-        private System.Windows.Forms.Button btnDeleteSupplier;
-        private System.Windows.Forms.Button btnInfoSupplier;
-        private System.Windows.Forms.Button btnInfoAllSuppliers;
+        private System.Windows.Forms.ListBox lstCategories;
+        private System.Windows.Forms.Button btnAddCategory;
+        private System.Windows.Forms.Button btnUpdateCategory;
+        private System.Windows.Forms.Button btnDeleteCategory;
+        private System.Windows.Forms.Button btnInfoCategory;
+        private System.Windows.Forms.Button btnInfoAllCategories;
         private System.Windows.Forms.Label lblShipper;
         private System.Windows.Forms.ListBox lstShippers;
         private System.Windows.Forms.Button btnAddShipper;

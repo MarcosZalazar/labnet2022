@@ -16,6 +16,8 @@ namespace TP4.Logic
             context = new NorthwindContext();
         }
 
+        public abstract T GetOne(int id);
+
         public abstract List<T> GetAll();
 
         public abstract void Add(T newObject);

@@ -10,6 +10,11 @@ namespace TP4.Logic
 {
     public class SuppliersLogic : BaseLogic<Suppliers>
     {
+        public override Suppliers GetOne(int id)
+        {
+            return context.Suppliers.Find(id);
+        }
+
         public override List<Suppliers> GetAll() 
         {
             return context.Suppliers.ToList();
@@ -23,14 +28,14 @@ namespace TP4.Logic
 
         public override void Delete(int id) 
         {
-            var supplierToDelete = context.Shippers.Find(id);
-            context.Shippers.Remove(supplierToDelete);
+            var supplierToDelete = context.Suppliers.Find(id);
+            context.Suppliers.Remove(supplierToDelete);
             context.SaveChanges();
         }
 
         public override void Update(Suppliers existingSupplier) 
         {
-            var supplierToUpdate = context.Suppliers.Find(existingSupplier.SupplierID);
+            var supplierToUpdate = this.GetOne(existingSupplier.SupplierID);
             supplierToUpdate.CompanyName = existingSupplier.CompanyName;
             supplierToUpdate.ContactName = existingSupplier.ContactName;
             supplierToUpdate.ContactTitle = existingSupplier.ContactTitle;

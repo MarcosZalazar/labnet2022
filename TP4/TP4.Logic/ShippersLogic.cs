@@ -9,6 +9,11 @@ namespace TP4.Logic
 {
     public class ShippersLogic : BaseLogic<Shippers>
     {
+        public override Shippers GetOne(int id)
+        {
+            return context.Shippers.Find(id);
+        }
+
         public override List<Shippers> GetAll()
         {
             return context.Shippers.ToList();
@@ -29,7 +34,7 @@ namespace TP4.Logic
 
         public override void Update(Shippers existingShipper)
         {
-            var shipperToUpdate = context.Shippers.Find(existingShipper.ShipperID);
+            var shipperToUpdate = this.GetOne(existingShipper.ShipperID);
             shipperToUpdate.CompanyName = existingShipper.CompanyName;
             shipperToUpdate.Phone = existingShipper.Phone;
             context.SaveChanges();

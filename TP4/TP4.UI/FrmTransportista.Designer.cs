@@ -76,15 +76,19 @@
             // 
             this.txtShippersCompanyName.Location = new System.Drawing.Point(163, 57);
             this.txtShippersCompanyName.Name = "txtShippersCompanyName";
+            this.txtShippersCompanyName.ShortcutsEnabled = false;
             this.txtShippersCompanyName.Size = new System.Drawing.Size(203, 20);
             this.txtShippersCompanyName.TabIndex = 4;
+            this.txtShippersCompanyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtShippersCompanyName_KeyPress);
             // 
             // txtShippersPhone
             // 
             this.txtShippersPhone.Location = new System.Drawing.Point(163, 94);
             this.txtShippersPhone.Name = "txtShippersPhone";
+            this.txtShippersPhone.ShortcutsEnabled = false;
             this.txtShippersPhone.Size = new System.Drawing.Size(203, 20);
             this.txtShippersPhone.TabIndex = 5;
+            this.txtShippersPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtShippersPhone_KeyPress);
             // 
             // btnShippersAcept
             // 
@@ -110,6 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(406, 210);
             this.Controls.Add(this.btnShippersCancel);
             this.Controls.Add(this.btnShippersAcept);
@@ -119,8 +124,13 @@
             this.Controls.Add(this.lblShippersPhone);
             this.Controls.Add(this.lblShippersCompanyName);
             this.Controls.Add(this.lblShippersId);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmTransportista";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transportista";
+            this.Load += new System.EventHandler(this.FrmTransportista_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

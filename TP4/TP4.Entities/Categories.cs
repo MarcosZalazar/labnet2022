@@ -5,6 +5,7 @@ namespace TP4.Entities
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Text;
 
     public partial class Categories
     {
@@ -29,5 +30,16 @@ namespace TP4.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Products> Products { get; set; }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Id de la categoría: {this.CategoryID} - ");
+            sb.AppendLine($"Nombre de la categoría:{this.CategoryName} - ");
+            sb.AppendLine($"Descripción:{this.Description}");
+
+            return sb.ToString();
+        }
     }
 }
