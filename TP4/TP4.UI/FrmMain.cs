@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP4.Logic;
 using TP4.Entities;
+using System.Data.Entity;
 
 namespace TP4.UI
 {
-    public partial class FrmPrincipal : Form
+    public partial class FrmMain : Form
     {
         private ShippersLogic shippersLogic;
         private CategoriesLogic categoriesLogic;
 
-        public FrmPrincipal()
+        public FrmMain()
         {
             InitializeComponent();
             this.shippersLogic = new ShippersLogic();
@@ -108,6 +109,7 @@ namespace TP4.UI
             {
                 MessageBox.Show("No se puede eliminar el registro ya que es usado por la entidad 'Productos'." +
                                 "Para eliminar el registro, elimine primero los productos relacionados", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
             catch (Exception)
             {
@@ -165,7 +167,7 @@ namespace TP4.UI
 
         private void btnAddShipper_Click(object sender, EventArgs e)
         {
-            FrmTransportista frmTransportista = new FrmTransportista("Agregar transportista", "Agregar", null);
+            FrmShippers frmTransportista = new FrmShippers("Agregar transportista", "Agregar", null);
             DialogResult resultado = frmTransportista.ShowDialog();
 
             try
@@ -191,7 +193,7 @@ namespace TP4.UI
             {
                 if (!(shipperToUpdate is null))
                 {
-                    FrmTransportista frmUpdateShipper= new FrmTransportista("Modificar transportista", "Modificar", shipperToUpdate);
+                    FrmShippers frmUpdateShipper= new FrmShippers("Modificar transportista", "Modificar", shipperToUpdate);
                     frmUpdateShipper.ShowDialog();
 
                     if (frmUpdateShipper.DialogResult == DialogResult.OK)
@@ -287,6 +289,10 @@ namespace TP4.UI
             {
                 MessageBox.Show("Error.No se pudo mostrar la información del transportista. Intente nuevamente ", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
+
+
+
     }
 }

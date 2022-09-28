@@ -27,9 +27,17 @@ namespace TP4.Logic
 
         public override void Delete(int id)
         {
-            var categoryToDelete = context.Categories.Find(id);
-            context.Categories.Remove(categoryToDelete);
-            context.SaveChanges();
+            try
+            {
+                var categoryToDelete = context.Categories.Find(id);
+                context.Categories.Remove(categoryToDelete);
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException ex) 
+            {
+                RollBackChanges();
+                throw ex;
+            }   
         }
 
         public override void Update(Categories existingCategory)

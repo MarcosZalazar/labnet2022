@@ -13,5 +13,6 @@ namespace TP4.Logic
         void Add(T newObject);
         void Delete(int id);
         void Update(T existingObject);
+        void RollBackChanges();
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +17,9 @@ namespace TP4.Logic
 
         }
 
-        public ShippersLogic(NorthwindContext contextMoq) 
+        public ShippersLogic(NorthwindContext contextMoq) :base(contextMoq)
         {
-            context = contextMoq;
+            
         }
 
         public override Shippers GetOne(int id)
@@ -38,9 +40,17 @@ namespace TP4.Logic
 
         public override void Delete(int id)
         {
-            var shipperToDelete = context.Shippers.Find(id);
-            context.Shippers.Remove(shipperToDelete);
-            context.SaveChanges();
+            try
+            {
+                var shipperToDelete = context.Shippers.Find(id);
+                context.Shippers.Remove(shipperToDelete);
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException ex) 
+            {
+                RollBackChanges();
+                throw ex;
+            }
         }
 
         public override void Update(Shippers existingShipper)

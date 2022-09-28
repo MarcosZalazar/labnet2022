@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,16 @@ namespace TP4.Logic
 {
     public abstract class BaseLogic<T> : ILogic<T>
     {
-        protected NorthwindContext context;
+        protected readonly NorthwindContext context;
 
         public BaseLogic()
         {
             context = new NorthwindContext();
+        }
+
+        public BaseLogic(NorthwindContext contextMoq)
+        {
+            context = contextMoq;
         }
 
         public abstract T GetOne(int id);
@@ -26,5 +32,26 @@ namespace TP4.Logic
 
         public abstract void Update(T existingObject);
 
+        public void RollBackChanges()
+        {
+            var changedEntries = context.ChangeTracker.Entries().Where(x => x.State != EntityState.Unchanged).ToList();
+
+            foreach (var entry in changedEntries)
+            {
+                switch (entry.State)
+                {
+                    case EntityState.Modified:
+                        entry.CurrentValues.SetValues(entry.OriginalValues);
+                        entry.State = EntityState.Unchanged;
+                        break;
+                    case EntityState.Added:
+                        entry.State = EntityState.Detached;
+                        break;
+                    case EntityState.Deleted:
+                        entry.State = EntityState.Unchanged;
+                        break;
+                }
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TP4.UI
 {
-    partial class FrmTransportista
+    partial class FrmShippers
     {
         /// <summary>
         /// Required designer variable.

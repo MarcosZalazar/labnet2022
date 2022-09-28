@@ -12,11 +12,11 @@ using TP4.Utils;
 
 namespace TP4.UI
 {
-    public partial class FrmTransportista : Form, IValidaciones
+    public partial class FrmShippers : Form, IValidaciones
     {
         private Shippers shipper;
 
-        public FrmTransportista(string operation, string operationButton, Shippers shipper)
+        public FrmShippers(string operation, string operationButton, Shippers shipper)
         {
             InitializeComponent();
             this.Text = operation;

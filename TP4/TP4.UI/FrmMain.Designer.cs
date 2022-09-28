@@ -1,6 +1,6 @@
 ﻿namespace TP4.UI
 {
-    partial class FrmPrincipal
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
